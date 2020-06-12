@@ -1,5 +1,7 @@
 react/components/node_modules
 react/seasons/node_modules
+react/pics/node_modules
+react/pics/src/secrets.js
 typescript/maps/.cache
 typescript/maps/node_modules
 typescript/fetchjson/node_modules
