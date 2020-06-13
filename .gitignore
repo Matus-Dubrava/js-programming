@@ -7,4 +7,5 @@ react/videos/src/secrets.js
 typescript/maps/.cache
 typescript/maps/node_modules
 typescript/fetchjson/node_modules
+node/misc
 misc
