@@ -1,0 +1,31 @@
+{
+  "streams": [
+    {
+      "title": "new stream",
+      "description": "my new stream",
+      "id": 9
+    },
+    {
+      "title": "another stream",
+      "description": "my another stream",
+      "id": 10
+    },
+    {
+      "title": "this stream",
+      "description": "this was made by me",
+      "userId": "111146642910329071404",
+      "id": 11
+    },
+    {
+      "title": "hello",
+      "description": "theredsa",
+      "id": 12
+    },
+    {
+      "title": "one more",
+      "description": "time 12",
+      "userId": "111146642910329071404",
+      "id": 13
+    }
+  ]
+}
