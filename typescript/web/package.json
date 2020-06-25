@@ -4,7 +4,8 @@
     },
     "scripts": {
         "start:frontend": "parcel index.html",
-        "start:backend": "json-server -w db.json"
+        "start:backend": "json-server -w db.json",
+        "start": "concurrently npm:start:*"
     },
     "dependencies": {
         "@types/axios": "^0.14.0",
