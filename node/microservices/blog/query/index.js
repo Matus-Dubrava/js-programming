@@ -4,24 +4,30 @@ const bodyParser = require('body-parser');
 
 const app = express();
 const port = 4002;
+const NODE_ENV = process.env.NODE_ENV || 'development';
 
-// const posts = {id: { title, comments: [{ id, content}]}}
 let posts = {};
 
 app.use(cors());
 app.use(bodyParser.json());
 
 app.post('/events', (req, res) => {
-	const { type, data } = req.body;
+	const {
+		type,
+		data,
+		data: { id },
+	} = req.body;
 	console.log(`received event: ${type}`);
-	console.log(data);
 
 	switch (type) {
 		case 'PostCreated':
-			posts = parsePost(data, posts);
+			const { title } = data;
+			posts[id] = { id, title, comments: [] };
 			break;
 		case 'CommentCreated':
-			posts = parseComment(data, posts);
+			const { content, postId } = data;
+			const post = posts[postId];
+			post.comments.push({ id, content });
 			break;
 	}
 
@@ -37,15 +43,3 @@ app.get('/posts', (req, res) => {
 app.listen(port, () => {
 	console.log(`listening on port ${port}`);
 });
-
-const parsePost = (data, posts) => {
-	const { id, title } = data;
-	posts[id] = { title, comments: [] };
-	return posts;
-};
-
-const parseComment = (data, posts) => {
-	const { id, content, postId } = data;
-	posts[postId].comments.push({ id, content });
-	return posts;
-};
