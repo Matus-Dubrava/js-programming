@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import backendServer from '../apis/backendServer';
 
 import CommentCreate from './CommentCreate';
 import CommentList from './CommentList';
@@ -13,7 +13,7 @@ export default () => {
 
 	const fetchPosts = async () => {
 		try {
-			const response = await axios.get('http://localhost:4002/posts');
+			const response = await backendServer.get('/posts');
 			setPosts(response.data);
 		} catch (err) {
 			console.error(err);

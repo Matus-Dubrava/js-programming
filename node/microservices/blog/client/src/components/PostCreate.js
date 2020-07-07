@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import backendServer from '../apis/backendServer';
 
 const PostCreate = () => {
 	const [title, setTitle] = useState('');
@@ -12,7 +12,7 @@ const PostCreate = () => {
 		event.preventDefault();
 
 		try {
-			await axios.post('http://localhost:4000/posts', {
+			await backendServer.post('/posts/create', {
 				title,
 			});
 			setTitle('');
