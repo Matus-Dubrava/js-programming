@@ -5,6 +5,12 @@ const cors = require('cors');
 const axios = require('axios');
 
 const app = express();
+const port = process.env.PORT;
+const EVENT_BUS_URL = process.env.EVENT_BUS_URL;
+
+if (!port) {
+	throw new Error('Failed to get PORT from environment variable');
+}
 
 const commentsByPostId = {};
 
@@ -27,7 +33,7 @@ app.post('/posts/:id/comments', async (req, res) => {
 	comments.push({ id: commentId, content, status });
 	commentsByPostId[postId] = comments;
 
-	await axios.post('http://localhost:4005/events', {
+	await axios.post(`${EVENT_BUS_URL}/events`, {
 		type: 'CommentCreated',
 		data: {
 			id: commentId,
@@ -50,7 +56,7 @@ app.post('/events', async (req, res) => {
 			const comment = comments.find((comment) => comment.id === id);
 			comment.status = status;
 
-			await axios.post('http://localhost:4005/events', {
+			await axios.post(`${EVENT_BUS_URL}/events`, {
 				type: 'CommentUpdated',
 				data: {
 					id,
@@ -66,6 +72,6 @@ app.post('/events', async (req, res) => {
 	res.send({});
 });
 
-app.listen(4001, () => {
-	console.log(`server listening on 4001`);
+app.listen(port, () => {
+	console.log(`server listening on ${port}`);
 });

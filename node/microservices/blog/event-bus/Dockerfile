@@ -2,6 +2,9 @@ FROM node:14-stretch-slim
 
 ENV TINI_VERSION v0.19.0
 ENV POSTS_URL http://posts-srv:4000
+ENV COMMENTS_URL http://comments-srv:4001
+ENV QUERY_URL http://query-srv:4002
+ENV MODERATION_URL http://moderation-srv:4003
 ENV PORT 4005
 
 EXPOSE $PORT

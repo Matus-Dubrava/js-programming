@@ -8,6 +8,9 @@ if (!PORT) {
 	throw new Error('Failed to get PORT from environment variable');
 }
 const POSTS_URL = process.env.POSTS_URL;
+const COMMENTS_URL = process.env.COMMENTS_URL;
+const QUERY_URL = process.env.QUERY_URL;
+const MODERATION_URL = process.env.MODERATION_URL;
 
 const events = [];
 
@@ -18,9 +21,9 @@ app.post('/events', (req, res) => {
 	events.push(event);
 
 	axios.post(`${POSTS_URL}/events`, event);
-	// axios.post('http://localhost:4001/events', event);
-	// axios.post('http://localhost:4002/events', event);
-	// axios.post('http://localhost:4003/events', event);
+	axios.post(`${COMMENTS_URL}/events`, event);
+	axios.post(`${QUERY_URL}/events`, event);
+	axios.post(`${MODERATION_URL}/events`, event);
 
 	res.send({ status: 'OK' });
 });
