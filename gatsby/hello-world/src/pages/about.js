@@ -7,7 +7,7 @@ export default function Home() {
     <PrimaryLayout column="col-xs-6">
       <h1>About Us</h1>
       <p>
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
         accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
         illo inventore veritatis et quasi architecto beatae vitae dicta sunt
         explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
@@ -19,7 +19,7 @@ export default function Home() {
         corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
         Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
         quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-        voluptas nulla pariatur?"
+        voluptas nulla pariatur?
       </p>
     </PrimaryLayout>
   )
