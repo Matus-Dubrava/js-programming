@@ -6,7 +6,7 @@ export default () => {
   return (
     <footer className={footerStyles.footer}>
       <div className="container ">
-        <span className="text-muted">This is footer container</span>
+        <span className="text-muted">Footer text</span>
       </div>
     </footer>
   )
