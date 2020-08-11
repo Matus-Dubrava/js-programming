@@ -8,8 +8,10 @@ export default ({ data }) => {
   return (
     <PrimaryLayout column="col-xs-6">
       {data.allMarkdownRemark.nodes.map(node => {
+        console.log(node.fields.slug)
         return (
           <Post
+            readMore={node.fields.slug}
             key={node.frontmatter.title}
             image={node.frontmatter.image}
             title={node.frontmatter.title}
@@ -33,6 +35,9 @@ export const query = graphql`
         }
         excerpt
         html
+        fields {
+          slug
+        }
       }
     }
   }

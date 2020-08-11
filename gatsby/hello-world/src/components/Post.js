@@ -1,6 +1,7 @@
 import React from "react"
+import { Link } from "gatsby"
 
-import { Card, Button } from "react-bootstrap"
+import { Card } from "react-bootstrap"
 
 export default props => {
   return (
@@ -9,7 +10,7 @@ export default props => {
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
         <Card.Text>{props.excerpt}</Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Link to={props.readMore}>Read More</Link>
       </Card.Body>
     </Card>
   )
