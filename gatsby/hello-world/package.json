@@ -19,7 +19,7 @@
     "gatsby-remark-highlights": "^1.3.4",
     "gatsby-source-filesystem": "^2.3.24",
     "gatsby-source-wordpress": "^3.3.28",
-    "gatsby-transformer-remark": "^2.8.28",
+    "gatsby-transformer-remark": "^5.25.1",
     "react": "^16.12.0",
     "react-bootstrap": "^1.3.0",
     "react-dom": "^16.12.0"
